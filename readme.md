@@ -1,0 +1,1 @@
+Completed day2 task of Designing DB Model for GUVI Zen Class.

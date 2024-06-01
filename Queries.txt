@@ -1,0 +1,31 @@
+create table users(user_id int primary key ,
+user_name varchar(20),
+email varchar(20) ,
+password varchar(20));
+
+create table student(student_id int primary key,
+first_name varchar(20),
+last_name varchar(20),
+batch_code varchar(20),
+user_id int,
+foreign key(user_id) references users(user_id));
+
+create table mentor(mentor_id int primary key,
+full_name varchar(20),
+user_id int,
+student_id int,
+foreign key(user_id) references users(user_id),
+foreign key(student_id) references student(student_id));
+
+create table task(task_id int primary key ,
+task_name varchar(20),
+task_status varchar(20),
+user_id int,
+foreign key(user_id) references users(user_id));
+
+create table capstone(capstone_id int primary key,
+project_name varchar(30),
+user_id int,
+foreign key(user_id) references users(user_id));
+
+
